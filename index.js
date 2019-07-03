@@ -4,10 +4,12 @@ const abi = require('./abi');
 //LHKD is on Ethereum Testnet Rinkeby network
 const web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/"));
 
-//for mainnet
+//change to mainnet
 // const web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/"));
 
+// this is on rinkeby. Mainnet will generate a new contract address
 const contractAddr = "0x777a2EAe2DbAbF08D50E822631c54e4304414b45";
+
 const LHKD = new web3.eth.Contract(abi.fiatTokenImplementation, contractAddr);
 
 async function calculateWalletBalance(walletAddress) {
